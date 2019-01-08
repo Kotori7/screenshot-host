@@ -17,7 +17,7 @@ class UploadController extends Controller
        }
        else {
            $username = DB::table('users')->where('apikey', $request->input('key'))->select('username')->get();
-           $path = $request->file('file')->store('public');
+           $path = $request->file('file')->storeAs('public', bin2hex(random_bytes(12)) . '.' . $request->file('file')->clientExtension());
            $name = substr($path, 7);
            File::create([
                'filename' => $name,
