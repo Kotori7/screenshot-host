@@ -11,12 +11,20 @@ $(document).ready(function(){
 successMessage = function(message){
     $('#alert-success-message').html(message);
     $('#alert-success').css('display', 'block');
+    // auto-close notification after 2 seconds
+    setTimeout(function(){
+        $('#alert-success').css('display', 'none');
+    }, 2000);
 }
 
 // show an error message
-errorMessage= function(message){
+errorMessage = function(message){
     $('#alert-error-message').html(message);
     $('#alert-error').css('display', 'block');
+    // auto-close notification after 5 seconds
+    setTimeout(function(){
+        $('#alert-error').css('display', 'none');
+    }, 5000);
 }
 
 // handler for the alert close link
@@ -38,4 +46,16 @@ $('#upload-form').submit(function(){
     return false;
 });
 
-//
+// delete link handler
+$('a.delete-file').click(function(e){
+    e.preventDefault();
+   axios.post($(this).attr('href'))
+       .then(function(){
+           successMessage("File deleted successfully.");
+           location.reload();
+       })
+       .catch(function(err){
+           errorMessage("An error occurred when trying to delete the file: " + err);
+       });
+   return false;
+});

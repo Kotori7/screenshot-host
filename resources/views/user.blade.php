@@ -46,14 +46,14 @@
                         {{--<br/>--}}
                         <div class="section">
                             <h4>API Key</h4>
-                            <div class="alert-warning">Remember to always keep your API key secret!</div>
+                            <div class="alert alert-warning">Remember to always keep your API key secret!</div>
                             <div class="form-group">
                                 <label for="apikey">Your API Key:</label>
                                 <input type="text" class="form-control" id="apikey" value="{{$apikey}}" name="apikey">
                             </div>
                             <br/>
                             <p>Reset API Key</p>
-                            <div class="alert-danger">When you click this button, your API key will be reset <b>immediately!</b><br/>
+                            <div class="alert alert-danger">When you click this button, your API key will be reset <b>immediately!</b><br/>
                             You'll need to change the configuration of any apps that are using it.</div>
                             <form action="/user/apikey" method="post">
                                 @csrf

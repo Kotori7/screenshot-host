@@ -29,11 +29,13 @@
                         <tr>
                             <th>Filename</th>
                             <th>Uploaded at</th>
+                            <th>Actions</th>
                         </tr>
                         @foreach($files as $file)
                             <tr>
                                 <td>{{$file->filename}}</td>
                                 <td>{{$file->created_at}}</td>
+                                <td><a class="delete-file" href="/file/{{$file->filename}}/delete">Delete</a></td>
                             </tr>
                         @endforeach
                     </table>

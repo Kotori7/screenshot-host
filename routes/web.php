@@ -23,3 +23,5 @@ Route::get('/user', 'UserController@index')->name('user');
 Route::post('/user/apikey', 'UserController@apikey')->name('apikey');
 
 Route::post('/upload', 'UploadController@upload')->name('upload');
+
+Route::post('/file/{filename}/delete', 'FileController@delete')->name('delete-file');
