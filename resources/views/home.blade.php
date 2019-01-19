@@ -17,6 +17,13 @@
                     You are logged in!
                     <br/>
                     <br/>
+                    <h4>Upload</h4>
+                    <form id="upload-form" action="/upload" method="post">
+                        <input type="text" name="key" style="display:none;" width="1" height="1" value="{{Auth::user()->apikey}}">
+                        <input formenctype="multipart/form-data" name="file" type="file" id="upload-file"><br/><br/>
+                        <button class="btn btn-primary" id="upload-button" type="submit" value="Upload">Upload</button>
+                    </form><br/>
+                    <p id="upload-result"></p><br/>
                     <h4>Your files</h4>
                     <table class="table table-bordered">
                         <tr>

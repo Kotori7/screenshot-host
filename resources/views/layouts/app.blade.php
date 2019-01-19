@@ -21,6 +21,7 @@
 </head>
 <body>
     <div id="app">
+
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -72,6 +73,16 @@
                 </div>
             </div>
         </nav>
+        <!-- success alert that we can show when something succeeds -->
+        <div id="alert-success" class="alert alert-success fixed-top" style="display: none;">
+            <a href="#" class="close" aria-label="close">&times;</a>
+            <p id="alert-success-message"></p>
+        </div>
+        <!-- error alert that we can show when something fails -->
+        <div id="alert-error" class="alert alert-danger fixed-top" style="display: none;">
+            <a href="#" class="close" aria-label="close">&times;</a>
+            <p id="alert-error-message"></p>
+        </div>
 
         <main class="py-4">
             @yield('content')
